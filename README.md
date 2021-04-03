@@ -11,3 +11,7 @@ minikube kubectl -- apply -f db.yaml
 ```
 minikube kubectl -- kubectl run postgresql-postgressql-client --rm --tty -i --restart='Never' --namespace default --image bitnami/postgresql --env="PGPASSWORD=admin123" --command -- psql -h <ClusterIP> -U postgresadmin --password -p 5432 postgresdb
 ```
+
+## Deploy api
+Internal pod to postgres sql connection doesn't seem to work with Minikube.
+Not sure why...
