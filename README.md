@@ -62,3 +62,8 @@ spec:
 ```
 
 Then, apply yaml using ```kubectl apply -f <YAML file>```
+
+# Minikube Kubernetes debug
+1. Use minikube dashboard to access kubernetes dashboard
+2. Use ```kubectl get events```
+
