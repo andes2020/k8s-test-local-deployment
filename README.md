@@ -1,10 +1,17 @@
 # k8s-test-local-deployment
+=======
 For deploying Sample 3tier app in https://github.com/andes2020/k8s-test-docker-push
 
-Start minikube first
-=======
-CI build of docker images has been done 
+- CI build of docker images has been done 
 [web and api node server docker build and push](https://github.com/andes2020/k8s-test-docker-push/actions)
+
+Here is to demonstrate how to use minikube and kubernetes to deploy 
+- 1 postgres database using postgres docker image --> db.yaml
+- 2 custom nodejs application docker images --> api.yaml and app.yaml
+
+I have not complete the app.yaml completely as API_HOST need to be exposed external IP/URL which minikube is not realistic to do so.
+
+If you are using aws/gcp/azure or other public cloud, then you can do so.
 
 ## Deploy DB with postgresql and persistence volume
 ```
