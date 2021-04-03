@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  template:
+    metadata:
+      labels:
+        app: db
+        tier: backend
+    spec:
+      containers:
+        - name: postgres-master
+          image: postgres:9.6.2
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "password"
+            - name: POSTGRES_DB
+              value: "api_db"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-master
+spec:
+  ports:
+    - name: db-listening-port
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+  selector:
+    app: db
+    tier: backend
+  # default type is clusterIP so no need to really declare a type
+  # type: ClusterIP
