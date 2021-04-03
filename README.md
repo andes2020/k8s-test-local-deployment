@@ -15,3 +15,10 @@ minikube kubectl -- kubectl run postgresql-postgressql-client --rm --tty -i --re
 ## Deploy api
 Internal pod to postgres sql connection doesn't seem to work with Minikube.
 Not sure why...
+
+Referencing:
+https://stackoverflow.com/questions/63591762/connect-to-postgresql-from-inside-kubernetes-cluster
+https://learnk8s.io/deploying-nodejs-kubernetes
+https://github.com/fgallina/bookapi (This example is using minikube with but it has to expose the postgres db host as nodeport)
+
+In reality, cloud should be easily done with internal dns resolution
