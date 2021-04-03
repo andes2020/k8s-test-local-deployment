@@ -23,6 +23,8 @@ spec:
               value: "3000"
             - name: DB
               value: "postgresdb"
+            - name: DBUSER
+              value: "postgresadmin"
             - name: DBPASS
               value: "admin123"
             - name: DBHOST
@@ -40,6 +42,6 @@ spec:
   ports:
     - name: expose-service-port
       protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 3000
   type: LoadBalancer
