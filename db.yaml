@@ -17,13 +17,13 @@ metadata:
 #     type: local
     app: db
 spec:
-  storageClassName: manual
+#   storageClassName: manual
   capacity:
-    storage: 5Gi
+    storage: 256Mi
   accessModes:
     - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
+#   hostPath:
+#     path: "/mnt/data"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
