@@ -1,5 +1,5 @@
 # k8s-test-local-deployment
-=======
+
 For deploying Sample 3tier app in https://github.com/andes2020/k8s-test-docker-push
 
 - CI build of docker images has been done 
@@ -12,7 +12,7 @@ Here is to demonstrate how to use minikube and kubernetes to deploy
 I have not complete the app.yaml completely as API_HOST need to be exposed external IP/URL which minikube is not realistic to do so.
 
 If you are using aws/gcp/azure or other public cloud, then you can do so.
-
+=======
 ## Deploy DB with postgresql and persistence volume
 ```
 minikube start
@@ -24,7 +24,7 @@ https://platform9.com/blog/tutorial-dynamic-provisioning-of-persistent-storage-i
 ```
 minikube kubectl -- kubectl run postgresql-postgressql-client --rm --tty -i --restart='Never' --namespace default --image bitnami/postgresql --env="PGPASSWORD=admin123" --command -- psql -h <ClusterIP> -U postgresadmin --password -p 5432 postgresdb
 ```
-
+=======
 ## Deploy api
 This will deploy the node api server into minikube with 3 pods.
 
@@ -51,7 +51,7 @@ Result should be a Json response as following
 
 [Minikube Loadbalancer resolution](https://stackoverflow.com/questions/44110876/kubernetes-service-external-ip-pending)
 
-
+=======
 ## Deploy the webapp (Won't do in minikube)
 
 ### Assumption (Prerequisite)
@@ -77,7 +77,7 @@ spec:
 Then run ```kubectl apply -f app.yaml```
 
 You should then be able to access the web app (Front end) using the webapp loadbalancer service IP.
-
+=======
 # Scale up
 Simply go to each yaml to upate Deployment ```spec.replicas```
 
