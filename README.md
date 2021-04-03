@@ -44,6 +44,8 @@ Outcome should be a Json response as following
 [{"time":"2021-04-03T14:16:17.052Z"}]
 ```
 
+[Minikube Loadbalancer resolution](https://stackoverflow.com/questions/44110876/kubernetes-service-external-ip-pending)
+
 # Scale up
 Simply go to each yaml to upate Deployment ```spec.replicas```
 
