@@ -2,6 +2,11 @@
 For deploying Sample 3tier app in https://github.com/andes2020/k8s-test-docker-push
 
 Start minikube first
+=======
+CI build of docker images has been done 
+[web and api node server docker build and push](https://github.com/andes2020/k8s-test-docker-push/actions)
+
+## Deploy DB with postgresql and persistence volume
 ```
 minikube start
 ```
@@ -9,6 +14,7 @@ minikube start
 ```
 minikube kubectl -- apply -f db.yaml
 ```
+https://platform9.com/blog/tutorial-dynamic-provisioning-of-persistent-storage-in-kubernetes-with-minikube/
 
 ## Test psql deployment is working
 ```
