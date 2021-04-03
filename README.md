@@ -1,3 +1,4 @@
+=======
 # k8s-test-local-deployment
 
 For deploying Sample 3tier app in https://github.com/andes2020/k8s-test-docker-push
@@ -13,26 +14,26 @@ I have not complete the app.yaml completely as API_HOST need to be exposed exter
 
 If you are using aws/gcp/azure or other public cloud, then you can do so.
 =======
-## Deploy DB with postgresql and persistence volume
+# Deploy DB with postgresql and persistence volume
 ```
 minikube start
 minikube kubectl -- apply -f db.yaml
 ```
 https://platform9.com/blog/tutorial-dynamic-provisioning-of-persistent-storage-in-kubernetes-with-minikube/
 
-### Test psql deployment is working
+## Test psql deployment is working
 ```
 minikube kubectl -- kubectl run postgresql-postgressql-client --rm --tty -i --restart='Never' --namespace default --image bitnami/postgresql --env="PGPASSWORD=admin123" --command -- psql -h <ClusterIP> -U postgresadmin --password -p 5432 postgresdb
 ```
 =======
-## Deploy api
+# Deploy api
 This will deploy the node api server into minikube with 3 pods.
 
 ```
 minikube kubectl -- apply -f api.yaml
 ```
 
-### Test it is working by 
+## Test it is working by 
 1. Get a local minikube tunnel to access as if external ip exists in cloud
 ```
 minikube service api-service --url 
@@ -43,7 +44,7 @@ minikube service api-service --url
 curl <Minikube Tunnel URL>/api/status
 ```
 
-### Outcome
+## Outcome
 Result should be a Json response as following
 ```
 [{"time":"2021-04-03T14:16:17.052Z"}]
@@ -52,12 +53,12 @@ Result should be a Json response as following
 [Minikube Loadbalancer resolution](https://stackoverflow.com/questions/44110876/kubernetes-service-external-ip-pending)
 
 =======
-## Deploy the webapp (Won't do in minikube)
+# Deploy the webapp (Won't do in minikube)
 
-### Assumption (Prerequisite)
+## Assumption (Prerequisite)
 Assume the api server is exposed by external loadbalancer with IP/ URL. I Can't be bothered to use minikube. :/
 
-### Configure API_HOST
+## Configure API_HOST
 You can then configure the API_HOST spec.containers[0].env env variable to deploy and run the webapp.
 ```
 spec:
